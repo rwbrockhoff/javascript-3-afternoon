@@ -118,8 +118,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -159,7 +159,19 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for (var key in myCar) {
+    
+    if(myCar[key] === myCar['accidents']){
+      myCar[key].map( (e, i) => {
+          e.atFaultForAccident = false;
+      })
+    }
+  }
+  return myCar;
+}
+  
+
 
 
 
@@ -178,6 +190,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(){
+  for (i=0; i < numsArr.length; i++){
+    for (j=0; j < numsArr[i].length; j++){
+       
+        if (numsArr[i][j] % 2 !== 0){
+            numsArr[i][j] = 'odd';
+          }
+        else {numsArr[i][j] = 'even'}
+    }
+    
+    
+    
+  }
+  return numsArr;
+}
 
 
