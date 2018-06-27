@@ -29,7 +29,23 @@
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
-//Code Here
+class Employee {
+  constructor(first_name, last_name, email, age){
+    
+    this.first_name = first_name, 
+    this.last_name = last_name,
+    this.email = email,
+    this.age = age
+  }
+
+  makeWidget () {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+
+  
+}
+
+new Employee('Joe', 'Scooter', 'joe@joescoots.com', 34)
 
 
 
@@ -49,7 +65,34 @@
   Call your new class Manager
 */
 
-//Code Here
+class Manager {
+  constructor(first_name, last_name, email, age, reports){
+    
+    this.first_name = first_name, 
+    this.last_name = last_name,
+    this.email = email,
+    this.age = age
+    this.reports = []
+  }
+
+  makeWidget () {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+
+hire (newEmp){
+ 
+this.reports.push(newEmp);
+ return this.reports
+}
+
+fire (person){
+   this.reports.splice(person,1);
+   return this.reports;
+ }
+
+  }
+  
+  
 
 
 
@@ -75,7 +118,56 @@
   Call your new class ProgressiveManager
 */
 
-//Code Here
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age){
+    
+    this.first_name = first_name, 
+    this.last_name = last_name,
+    this.email = email,
+    this.age = age,
+    this.reports = [],
+    this.title = 'Not a manager',
+    this.bonus = 0;
+  }
+
+  makeWidget () {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+
+hire (newEmp){
+this.reports.push(newEmp);
+
+console.log(this.reports.length);
+if (this.reports.length === 0) {this.title = 'Not a manager';}
+else if (this.reports.length > 0 && this.reports.length <= 3) {
+  console.log("Testing Barely Manager!");
+  this.title = 'Barely Manager';}
+else if (this.reports.length > 3 && this.reports.length <=10) {
+  console.log("Do you arrive here at all?????????");
+  this.title = 'Mostly Manager'}
+else if (this.reports.length > 10 && this.reports.length <= 50) {this.title = 'Manager';}
+else if (this.reports.length > 50 && this.reports.length <= 100) {this.title = 'Manager Plus';}
+else {this.title = 'Bestest Manager';}
+console.log(this.title);
+}
+
+
+fire (person){
+   this.reports.splice(person,1);
+   this.bonus += 100;
+
+   if (this.reports.length === 0) {this.title = 'Not a manager';}
+else if (this.reports.length > 0 && this.reports.length <= 3) {this.title = 'Barely Manager';}
+else if (this.reports.length > 3 && this.reports.length <=10) {
+  this.title = 'Mostly Manager'}
+else if (this.reports.length > 10 && this.reports.length <= 50) {this.title = 'Manager';}
+else if (this.reports.length > 50 && this.reports.length <= 100) {this.title = 'Manager Plus';}
+else {this.title = 'Bestest Manager';}
+
+   return this.reports;
+ }
+
+  }
 
 
 
