@@ -54,8 +54,11 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
+function totalPopulation(obj){
+  var {utah, california, texas, arizona} = obj;
+  let sum = utah + california + texas + arizona;
+  return sum;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +71,16 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj){
+ let newArr = [];
+  for(var key in obj){
+    newArr.push(obj[key]);
+ }
+ return newArr;
+  
+
+
+}
 
 
 
@@ -86,7 +98,17 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers ( {first, second, third} ){
+  if (first < second && first < third){
+    return first;
+  }
+  if (second < first && second < third){
+    return second;
+  }
+  if (third < first && third < second){
+    return third;
+  }
+}
 
 
 
@@ -98,6 +120,15 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
-
+function numberGroups( {a, b, c} ){
+  if (a.length > b.length && a.length > c.length){
+    return a;
+  }
+  if (b.length > a.length && b.length > c.length){
+    return b;
+  }
+  if (c.length > a.length && c.length > b.length){
+    return c;
+  }
+}
 
